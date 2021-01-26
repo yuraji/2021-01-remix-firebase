@@ -1,4 +1,4 @@
-import { Meta, Scripts, Styles, Routes, useGlobalData } from "@remix-run/react";
+import { Meta, Scripts, Styles, Routes, useGlobalData, Link } from "@remix-run/react";
 
 export default function App() {
   let data = useGlobalData();
@@ -11,6 +11,9 @@ export default function App() {
         <Styles />
       </head>
       <body>
+        <Link to="/">home</Link>{' '}
+        <Link to="/mdx">MDX</Link>
+        
         <Routes />
 
         <footer>

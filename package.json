@@ -1,13 +1,16 @@
 {
-  "private": true,
   "name": "remix-starter-express",
+  "main": "src/functions.js",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "build": "remix build",
     "dev": "pm2-dev pm2.config.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
+    "@mdx-js/react": "^1.6.22",
     "@remix-run/cli": "^0.9.1",
     "@remix-run/data": "^0.9.1",
     "@remix-run/express": "^0.9.1",
@@ -15,6 +18,8 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1",
     "morgan": "^1.10.0",
     "pm2": "^4.5.1",
     "react": "^17.0.1",

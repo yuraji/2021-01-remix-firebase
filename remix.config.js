@@ -29,6 +29,11 @@ module.exports = {
   //     );
   //   });
   // },
+  routes(defineRoutes) {
+    return defineRoutes(route => {
+      route("*", "catchall.tsx", { loader: "catchall.ts" });
+    });
+  },
 
   /**
    * The path to the browser build, relative to remix.config.js. Defaults to

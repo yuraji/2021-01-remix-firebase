@@ -1,0 +1,22 @@
+---
+meta:
+  title: MDX!
+  description: Some MDX
+---
+import {useState} from "react";
+
+# MDX
+
+export const Counter = () => {
+    const [num, setNum] = useState(1);
+    return (
+        <p>{num}<br/><button onClick={()=>setNum(n=>n+1)}>+</button></p>
+    )
+}
+
+<div style={{ background:'yellow', padding: '16px' }}>
+    <h1>MDX</h1>
+    <Counter/>
+</div>
+
+
