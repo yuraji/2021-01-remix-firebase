@@ -1,8 +1,8 @@
 module.exports = {
   apps: [
     {
-      name: "Express",
-      script: "server.js",
+      name: "Firebase",
+      script: "firebase emulators:start",
       watch: ["remix.config.js", "app"],
       watch_options: {
         followSymlinks: false,

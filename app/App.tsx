@@ -12,7 +12,8 @@ export default function App() {
       </head>
       <body>
         <Link to="/">home</Link>{' '}
-        <Link to="/mdx">MDX</Link>
+        <Link to="/mdx">MDX</Link>{' '}
+        <Link to="/catchy">catchy</Link>{' '}
         
         <Routes />
 
