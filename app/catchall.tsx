@@ -45,14 +45,16 @@ export function meta() {
 
 export default function CatchAll() {
   let data = useRouteData()
-  const {pathname} = data
+//   const {pathname} = data
   console.log('data:', data)
   // const loc = useLocation()
   // console.log('loc:', loc)
   return (
     <div>
       <h1>CATCHALL</h1>
-      <p>{pathname}</p>
+      <p>{data ? data.pathname : 
+        <div className="text-red-400 font-semibold">no route data</div>
+      }</p>
     </div>
   )
 }

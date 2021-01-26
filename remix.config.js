@@ -31,7 +31,7 @@ module.exports = {
   // },
   routes(defineRoutes) {
     return defineRoutes(route => {
-      route("*", "catchall.tsx", { loader: "catchall.ts" });
+      route("*", "catchall.tsx");
     });
   },
 

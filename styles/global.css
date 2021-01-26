@@ -1,0 +1,16 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@tailwind base;
+@tailwind components;
+
+/* custom styles */
+
+button, .btn {
+    @apply px-4 py-2 bg-pink-600 text-white rounded;
+}
+
+a {
+    @apply border-b-2 border-blueGray-500
+}
+
+@tailwind utilities;
