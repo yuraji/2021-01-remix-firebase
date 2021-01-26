@@ -26,6 +26,9 @@ export default function App() {
               <Link to="/mdx">MDX</Link>{' '}
               <Link to="/catchy">catchy</Link>{' '}
               <Link to="/catchum">catchum</Link>{' '}
+              <Link to="/team">team</Link>{' '}
+              <Link to="/team/mjackson">michael</Link>{' '}
+              <Link to="/team/ryanflorence">ryan</Link>{' '}
             </div>
           </header>
           
