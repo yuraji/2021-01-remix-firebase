@@ -10,8 +10,6 @@ export default function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  let { matches } = remixContext;
-  let is404Page = matches[matches.length - 1].route.id === "routes/404";
   let markup = ReactDOMServer.renderToString(
     <Remix
       context={remixContext}
@@ -23,7 +21,7 @@ export default function handleRequest(
   );
 
   return new Response("<!DOCTYPE html>" + markup, {
-    status: is404Page ? 200 : responseStatusCode,
+    status: responseStatusCode,
     headers: {
       ...Object.fromEntries(responseHeaders),
       "Content-Type": "text/html",
