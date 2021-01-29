@@ -23,7 +23,7 @@ export default function Index() {
         started.
       </p>
       <p>Message from the loader: {data ? data.message : 
-        <div className="text-red-400 font-semibold">no route data</div>
+        <span className="text-red-400 font-semibold">no route data</span>
       }</p>
     </div>
   );

@@ -1,5 +1,7 @@
 import { Meta, Scripts, Styles, Routes, useGlobalData, usePendingLocation} from "@remix-run/react";
 import { Link } from "react-router-dom";
+import Header from "./ui/Header";
+import { AppStateProvider } from "./hooks/AppDataState";
 
 export default function App() {
   let data = useGlobalData();
@@ -14,23 +16,11 @@ export default function App() {
       </head>
       <body>
 
+      <AppStateProvider>
+
         <div className="flex flex-col min-h-screen">
-          
-          <header className="bg-cyan-300" style={{
-            opacity: !!pendingLocation ? "0.15" : "1",
-            transition: "opacity 200ms ease-in-out",
-            transitionDelay: "200ms",
-          }}>
-            <div className="container mx-auto font-semibold pb-2.5 pt-2">
-              <Link to="/">home</Link>{' '}
-              <Link to="/mdx">MDX</Link>{' '}
-              <Link to="/catchy">catchy</Link>{' '}
-              <Link to="/catchum">catchum</Link>{' '}
-              <Link to="/team">team</Link>{' '}
-              <Link to="/team/mjackson">michael</Link>{' '}
-              <Link to="/team/ryanflorence">ryan</Link>{' '}
-            </div>
-          </header>
+
+          <Header />
           
           <div className="container mx-auto flex-grow">
             <Routes />
@@ -44,6 +34,25 @@ export default function App() {
 
         
         </div>
+        </AppStateProvider>
+
+
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+        <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+        <script defer src="https://www.gstatic.com/firebasejs/8.2.4/firebase-firestore.js"></script>
+        <script dangerouslySetInnerHTML={{ __html: `
+          var firebaseConfig = {
+            apiKey: "AIzaSyDRGTaUmh0mJmvTj6QQtMPrmFDRDdz97JE",
+            authDomain: "remix-firebase-2021-01.firebaseapp.com",
+            projectId: "remix-firebase-2021-01",
+            storageBucket: "remix-firebase-2021-01.appspot.com",
+            messagingSenderId: "671716324269",
+            appId: "1:671716324269:web:7ca24fce99ac00a82b2724"
+          };
+          firebase.initializeApp(firebaseConfig);
+        `}} />
+
+        
         <Scripts />
       </body>
     </html>

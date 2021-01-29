@@ -53,7 +53,7 @@ export default function CatchAll() {
     <div>
       <h1>CATCHALL</h1>
       <p>{data ? data.pathname : 
-        <div className="text-red-400 font-semibold">no route data</div>
+        <span className="text-red-400 font-semibold">no route data</span>
       }</p>
     </div>
   )
