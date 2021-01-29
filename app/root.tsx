@@ -1,10 +1,17 @@
-import { Meta, Scripts, Styles, Routes, useGlobalData, usePendingLocation} from "@remix-run/react";
-import { Link } from "react-router-dom";
+import { Meta, Scripts, Styles, usePendingLocation, useRouteData} from "@remix-run/react";
+import { Outlet } from "react-router-dom";
 import Header from "./ui/Header";
 import { AppStateProvider } from "./hooks/AppDataState";
 
+import type { Loader } from "@remix-run/data";
+
+export let loader: Loader = async () => {
+  return { date: new Date() };
+};
+
+
 export default function App() {
-  let data = useGlobalData();
+  let data = useRouteData();
   let pendingLocation = usePendingLocation();
 
   return (
@@ -23,7 +30,7 @@ export default function App() {
           <Header />
           
           <div className="container mx-auto flex-grow">
-            <Routes />
+            <Outlet />
           </div>
           
           <footer className="bg-gray-100">
